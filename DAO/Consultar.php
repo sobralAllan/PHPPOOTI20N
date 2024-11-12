@@ -30,8 +30,5 @@
                 echo $erro;
             }
         }//fim do método
-
-
-
     }//fim da classe
 ?>

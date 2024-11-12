@@ -7,6 +7,8 @@
     require_once('DAO/Conexao.php');
     require_once('DAO/Inserir.php');
     require_once('DAO/Consultar.php');
+    require_once('DAO/Atualizar.php');
+    require_once('DAO/Excluir.php');
     use PHP\Modelo\Cliente;//Definir a classe 
     use PHP\Modelo\Pessoa;
     use PHP\Modelo\Funcionario;
@@ -14,6 +16,8 @@
     use PHP\Modelo\DAO\Conexao;
     use PHP\Modelo\DAO\Inserir;
     use PHP\Modelo\DAO\Consultar;
+    use PHP\Modelo\DAO\Atualizar;
+    use PHP\Modelo\DAO\Excluir;
 
     /*
 
@@ -64,4 +68,10 @@
     echo $consultar->consultarIndividual($conn,'2');
     echo $consultar->consultarIndividual($conn,'3');
 
-?>
+    $atualizar = new Atualizar();
+    echo $atualizar->atualizarPessoa($conn, "nome", "Allan",1);
+
+    $excluir   = new Excluir();
+    $excluir->excluirPessoa($conn,1);
+
+ ?>
